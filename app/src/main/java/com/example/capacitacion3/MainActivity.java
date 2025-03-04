@@ -35,8 +35,7 @@ public class MainActivity extends AppCompatActivity
 
         textoSaludo.setText("Hola mundo");
         miBoton.setText("Presióname");
-        botonReiniciar.setText("Reiniciar")
-
+        botonReiniciar.setText("Reiniciar");
 
         miBoton.setOnClickListener(new View.OnClickListener()
         {

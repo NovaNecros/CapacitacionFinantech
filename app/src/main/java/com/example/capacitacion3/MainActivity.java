@@ -19,6 +19,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity
 {
     Button miBoton;
+    Button botonSaludo;
     Button botonReiniciar;
     TextView textoSaludo;
     ImageView imagen;
@@ -33,12 +34,14 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
 
         miBoton = (Button) findViewById(R.id.botoncito);
+        botonSaludo = (Button) findViewById(R.id.botonSaludo);
         botonReiniciar = (Button) findViewById(R.id.botonReiniciar);
         textoSaludo = (TextView) findViewById(R.id.textoSaludo);
         imagen = (ImageView) findViewById(R.id.coffeeCat);
         editNombre = (EditText) findViewById(R.id.editNombre);
 
         miBoton.setVisibility(View.VISIBLE);
+        botonSaludo.setVisibility(View.GONE);
         botonReiniciar.setVisibility(View.GONE);
         imagen.setVisibility(View.GONE);
         editNombre.setVisibility(View.GONE);
@@ -48,20 +51,29 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View view)
             {
+                textoSaludo.setText("Dame nombre");
+                miBoton.setVisibility(View.GONE);
+                botonSaludo.setVisibility(View.VISIBLE);
+                botonReiniciar.setVisibility(View.VISIBLE);
+                imagen.setVisibility(View.VISIBLE);
+                editNombre.setVisibility(view.VISIBLE);
+
+            }
+        });
+
+        botonSaludo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view)
+            {
                 String nombre = editNombre.getText().toString();
                 if(!nombre.isEmpty())
                 {
-                    textoSaludo.setText("Miau " + nombre);
-                    Toast.makeText(getApplicationContext(), "Presionaste el Botón" + nombre, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Tú " + nombre, Toast.LENGTH_SHORT).show();
                 }
                 else
                 {
-                    Toast.makeText(getApplicationContext(), "Debes darme tu nombre!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Dame nombre >:(", Toast.LENGTH_SHORT).show();
                 }
-
-                textoSaludo.setText("Me apachurraron");
-                miBoton.setVisibility(View.GONE);
-                botonReiniciar.setVisibility(View.VISIBLE);
             }
         });
 

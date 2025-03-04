@@ -12,20 +12,49 @@
         android:id="@+id/textoSaludo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:text="Bienvenido"
         android:textSize="32sp"
         android:textStyle="bold"
+        android:textAlignment="center"
         android:gravity="center"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
+    <ImageView
+        android:id="@+id/coffeeCat"
+        android:layout_width="match_parent"
+        android:layout_height="381dp"
+        app:srcCompat="@mipmap/coffee_cat"/>
+
+    <TextView
+        android:id="@+id/dameNombre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Dame tu nombre."
+        android:textSize="32sp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <EditText
+        android:id="@+id/editNombre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="text"
+        android:text=""/>
+
     <Button
         android:id="@+id/botoncito"
         android:layout_width="200dp"
         android:layout_height="100dp"
-        android:text="Button"
+        android:text="Presióname"
         android:visibility="gone"
         android:textSize="20sp"
         android:padding="16dp"
@@ -39,7 +68,7 @@
         android:id="@+id/botonReiniciar"
         android:layout_width="200dp"
         android:layout_height="100dp"
-        android:text="Button"
+        android:text="Reiniciar"
         android:visibility="gone"
         android:textSize="20sp"
         android:padding="16dp"

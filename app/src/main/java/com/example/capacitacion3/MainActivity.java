@@ -12,11 +12,17 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.Toast;
+
 public class MainActivity extends AppCompatActivity
 {
     Button miBoton;
     Button botonReiniciar;
     TextView textoSaludo;
+    ImageView imagen;
+    EditText editNombre;
 
 
     @Override
@@ -26,22 +32,33 @@ public class MainActivity extends AppCompatActivity
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
 
-        miBoton = (Button)findViewById(R.id.botoncito);
-        botonReiniciar = (Button)findViewById(R.id.botonReiniciar);
-        textoSaludo = (TextView)findViewById(R.id.textoSaludo);
+        miBoton = (Button) findViewById(R.id.botoncito);
+        botonReiniciar = (Button) findViewById(R.id.botonReiniciar);
+        textoSaludo = (TextView) findViewById(R.id.textoSaludo);
+        imagen = (ImageView) findViewById(R.id.coffeeCat);
+        editNombre = (EditText) findViewById(R.id.editNombre);
 
         miBoton.setVisibility(View.VISIBLE);
         botonReiniciar.setVisibility(View.GONE);
-
-        textoSaludo.setText("Hola mundo");
-        miBoton.setText("Presióname");
-        botonReiniciar.setText("Reiniciar");
+        imagen.setVisibility(View.GONE);
+        editNombre.setVisibility(View.GONE);
 
         miBoton.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View view)
             {
+                String nombre = editNombre.getText().toString();
+                if(!nombre.isEmpty())
+                {
+                    textoSaludo.setText("Miau " + nombre);
+                    Toast.makeText(getApplicationContext(), "Presionaste el Botón" + nombre, Toast.LENGTH_SHORT).show();
+                }
+                else
+                {
+                    Toast.makeText(getApplicationContext(), "Debes darme tu nombre!", Toast.LENGTH_SHORT).show();
+                }
+
                 textoSaludo.setText("Me apachurraron");
                 miBoton.setVisibility(View.GONE);
                 botonReiniciar.setVisibility(View.VISIBLE);

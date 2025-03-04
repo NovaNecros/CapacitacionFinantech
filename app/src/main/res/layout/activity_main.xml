@@ -11,7 +11,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:paddingTop="50dp"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="33dp">
 
@@ -26,5 +25,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Button" />
+
+        <Button
+            android:id="@+id/botonReiniciar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Reiniciar" />
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

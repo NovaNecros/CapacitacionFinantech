@@ -15,6 +15,7 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity
 {
     Button miBoton;
+    Button botonReiniciar;
     TextView textoSaludo;
 
 
@@ -22,13 +23,18 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        //EdgeToEdge.enable(this);
+        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
 
         miBoton = (Button)findViewById(R.id.botoncito);
+        botonReiniciar = (Button)findViewById(R.id.botonReiniciar);
         textoSaludo = (TextView)findViewById(R.id.textoSaludo);
-        textoSaludo.setText("Hola nuevo");
+
         miBoton.setText("presioname");
+        botonReiniciar.setText("De Nuevo");
+        textoSaludo.setText("Hola mundo");
+
+
         miBoton.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -38,10 +44,19 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
-        /*ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+        botonReiniciar.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                recreate();
+            }
+        });
+
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
-        }); */
+        });
     }
 }

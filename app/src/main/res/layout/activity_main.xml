@@ -7,6 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -14,6 +15,7 @@
         android:paddingRight="16dp"
         android:orientation="vertical"
         android:gravity="center">
+
         <TextView
             android:id="@+id/textoSaludo"
             android:layout_width="match_parent"
@@ -34,11 +36,11 @@
             android:id="@+id/editNombre"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:visibility="gone"
             android:ems="10"
             android:inputType="text"
             android:gravity="center"
             android:text=""/>
+
         <Button
             android:id="@+id/botoncito"
             android:layout_width="200dp"
@@ -47,35 +49,36 @@
             android:visibility="gone"
             android:textSize="20sp"
             android:padding="16dp"
-            android:background="@drawable/boton_redondeado"
+            android:backgroundTint="@color/brat"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="100dp"/>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:orientation="horizontal">
+
             <Button
                 android:id="@+id/botonSaludo"
                 android:layout_width="120dp"
                 android:layout_height="100dp"
-                android:text="Saludo"
-                android:visibility="gone"
+                android:text="saludo"
                 android:textSize="20sp"
                 android:padding="16dp"
-                android:background="@drawable/boton_redondeado"
+                android:backgroundTint="@color/brat"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="100dp"
                 android:layout_marginEnd="16dp"/>
+
             <Button
                 android:id="@+id/botonReiniciar"
                 android:layout_width="120dp"
                 android:layout_height="100dp"
-                android:text="Reiniciar"
-                android:visibility="gone"
+                android:text="reinicio"
                 android:textSize="20sp"
                 android:padding="16dp"
-                android:background="@drawable/boton_redondeado"
+                android:backgroundTint="@color/red"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="100dp"
                 android:layout_marginStart="16dp"/>

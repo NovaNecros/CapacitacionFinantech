@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View view)
             {
-                textoSaludo.setText("Dame nombre");
+                textoSaludo.setText("dame nombre");
                 miBoton.setVisibility(View.GONE);
                 botonSaludo.setVisibility(View.VISIBLE);
                 botonReiniciar.setVisibility(View.VISIBLE);
@@ -68,11 +68,11 @@ public class MainActivity extends AppCompatActivity
                 String nombre = editNombre.getText().toString();
                 if(!nombre.isEmpty())
                 {
-                    Toast.makeText(getApplicationContext(), "Tú " + nombre, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "tú " + nombre, Toast.LENGTH_SHORT).show();
                 }
                 else
                 {
-                    Toast.makeText(getApplicationContext(), "Dame nombre >:(", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "dame nombre >:(", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -83,10 +83,12 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View view)
             {
                 recreate();
+                editNombre.setText("");
             }
         });
 
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) ->
+        {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;

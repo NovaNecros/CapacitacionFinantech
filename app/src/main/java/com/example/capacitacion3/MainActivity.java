@@ -30,9 +30,12 @@ public class MainActivity extends AppCompatActivity
         botonReiniciar = (Button)findViewById(R.id.botonReiniciar);
         textoSaludo = (TextView)findViewById(R.id.textoSaludo);
 
-        miBoton.setText("presioname");
-        botonReiniciar.setText("De Nuevo");
+        miBoton.setVisibility(View.VISIBLE);
+        botonReiniciar.setVisibility(View.GONE);
+
         textoSaludo.setText("Hola mundo");
+        miBoton.setText("Presióname");
+        botonReiniciar.setText("Reiniciar")
 
 
         miBoton.setOnClickListener(new View.OnClickListener()
@@ -41,6 +44,8 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View view)
             {
                 textoSaludo.setText("Me apachurraron");
+                miBoton.setVisibility(View.GONE);
+                botonReiniciar.setVisibility(View.VISIBLE);
             }
         });
 

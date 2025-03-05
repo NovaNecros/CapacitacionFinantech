@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Drawable Resources</string>
+    <string name="textoBoton">Presiona este bello botón hexagonal</string>
+    <string name="fin">cafeinado y listo</string>
+</resources>

@@ -7,18 +7,74 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-    </LinearLayout>
+    <Button
+        android:visibility="visible"
+        android:id="@+id/botonInicio"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="@string/inicio"
+        android:textStyle="bold"
+        android:textSize="50sp"
+        android:padding="16dp"
+        android:backgroundTint="#8000FF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <Button
+        android:visibility="gone"
+        android:id="@+id/botonReinicio"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="@string/regreso"
+        android:textStyle="bold"
+        android:textSize="50sp"
+        android:padding="16dp"
+        android:backgroundTint="#8BCF01"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
     <TextView
+        android:id="@+id/textoArriba"
+        android:visibility="gone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="@string/instructions"
+        android:textStyle="bold"
+        android:textSize="30sp"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textoAbajo"
+        android:visibility="visible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/meme"
+        android:textStyle="bold"
+        android:textSize="30sp"
+        android:gravity="center"
+        android:layout_marginBottom="20dp"
+        tools:layout_editor_absoluteX="175dp"
+        tools:layout_editor_absoluteY="434dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <ImageView
+        android:id="@+id/imagenSaludo"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:paddingTop="50dp"
+        app:srcCompat="@mipmap/ola"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

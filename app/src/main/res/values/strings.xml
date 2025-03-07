@@ -1,7 +1,8 @@
 <resources>
     <string name="app_name">listeners</string>
     <string name="titulo">Interfaz de Listeners</string>
-    <string name="textoboton1">TEXTO BOTON 1</string>
-    <string name="textoboton2">TEXTO BOTON 2</string>
-    <string name="textotoast">TEXTO TOAST</string>
+    <string name="textoboton1">Pica este botón</string>
+    <string name="textoboton2">No piques este botón</string>
+    <string name="textotoast1">Bravooo</string>
+    <string name="textotoast2">&gt;:(</string>
 </resources>

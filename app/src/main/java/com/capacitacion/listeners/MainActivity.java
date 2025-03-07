@@ -10,11 +10,14 @@ import androidx.core.view.WindowInsetsCompat;
 
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener
 {
+    TextView titulo;
     Button boton1;
+    Button boton2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -23,8 +26,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
 
-        Button boton1 = (Button) findViewById(R.id.boton1);
-        Button boton2 = (Button) findViewById(R.id.boton2);
+        titulo = (TextView) findViewById(R.id.titulo);
+        boton1 = (Button) findViewById(R.id.boton1);
+        boton2 = (Button) findViewById(R.id.boton2);
 
         boton1.setOnClickListener(this);
         boton2.setOnClickListener(this);

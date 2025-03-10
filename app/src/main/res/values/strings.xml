@@ -1,8 +1,12 @@
 <resources>
-    <string name="app_name">Toggle Buttons</string>
-    <string name="textoBotonOn">Engine Started</string>
-    <string name="textoBotonOff">Engine Stopped</string>
-    <string name="textoToastOn">On Position</string>
-    <string name="textoToastOff">Off Position</string>
-    <string name="titulo">Toggle Buttons :D</string>
+    <string name="app_name">Checkboxes</string>
+    <string name="textoBotonOn">Salir</string>
+    <string name="textoBotonOff">Ordenar</string>
+    <string name="textoToastOn">Marca tu orden</string>
+    <string name="textoToastOff">Hasta luego!!</string>
+    <string name="titulo">Bonjour</string>
+    <string name="aperitivo">Appetizer</string>
+    <string name="entrada">Entree</string>
+    <string name="postre">Dessert</string>
+    <string name="ordenar">Finalizar Pedido</string>
 </resources>

@@ -14,9 +14,14 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.CompoundButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
+import android.widget.CheckBox;
+import android.widget.Button;
+
+import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity
 {
@@ -33,7 +38,68 @@ public class MainActivity extends AppCompatActivity
             return insets;
         });
 
-        ToggleButton toggleButton = (ToggleButton) findViewById(R.id.togglebutton);
+        final TextView titulo = (TextView) findViewById(R.id.titulo);
+        final ToggleButton toggleButton = (ToggleButton) findViewById(R.id.togglebutton);
+        final CheckBox appetizerCheck = (CheckBox) findViewById(R.id.appetizercheck);
+        final CheckBox entreeCheck = (CheckBox) findViewById(R.id.entreecheck);
+        final CheckBox dessertCheck = (CheckBox) findViewById(R.id.dessertcheck);
+        final Button ordenarBtn = (Button) findViewById(R.id.ordenarbtn);
+        final ImageView imagen = (ImageView) findViewById(R.id.chef);
+
+        final CheckBox [] checkBoxes = new CheckBox[]
+        {
+            appetizerCheck,
+            entreeCheck,
+            dessertCheck
+        };
+
+        titulo.setVisibility(View.VISIBLE);
+        imagen.setVisibility(View.VISIBLE);
+        appetizerCheck.setVisibility(View.GONE);
+        entreeCheck.setVisibility(View.GONE);
+        dessertCheck.setVisibility(View.GONE);
+        ordenarBtn.setVisibility(View.GONE);
+
+        ordenarBtn.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                StringBuilder orden = new StringBuilder();
+
+                if(appetizerCheck.isChecked())
+                {
+                    orden.append(getString(R.string.aperitivo));
+                }
+                if(entreeCheck.isChecked())
+                {
+                    if(!orden.toString().isEmpty())
+                    {
+                        orden.append(", ");
+                    }
+                    orden.append(getString(R.string.entrada));
+                }
+                if(dessertCheck.isChecked())
+                {
+                    if(!orden.toString().isEmpty())
+                    {
+                        orden.append(", ");
+                    }
+                    orden.append(getString(R.string.postre));
+                }
+
+                if(!orden.toString().isEmpty())
+                {
+                    int color = ContextCompat.getColor(getApplicationContext(), R.color.dorado);
+                    showToast(orden, color);
+                }
+
+                for(CheckBox checkBox : checkBoxes)
+                {
+                    checkBox.setChecked(false);
+                }
+            }
+        });
 
         toggleButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
         {
@@ -48,17 +114,38 @@ public class MainActivity extends AppCompatActivity
                     texto = getString(R.string.textoToastOn);
                     color = ContextCompat.getColor(getApplicationContext(), R.color.azulchillon);
                     showToast(texto, color);
+
+                    imagen.setVisibility(View.GONE);
+                    appetizerCheck.setVisibility(View.VISIBLE);
+                    entreeCheck.setVisibility(View.VISIBLE);
+                    dessertCheck.setVisibility(View.VISIBLE);
+                    ordenarBtn.setVisibility(View.VISIBLE);
                 }
                 else
                 {
                     texto = getString(R.string.textoToastOff);
-                    color = ContextCompat.getColor(getApplicationContext(), R.color.rojosangre);
+                    color = ContextCompat.getColor(getApplicationContext(), R.color.azulchillon);
                     showToast(texto, color);
+
+                    imagen.setVisibility(View.VISIBLE);
+                    appetizerCheck.setVisibility(View.GONE);
+                    entreeCheck.setVisibility(View.GONE);
+                    dessertCheck.setVisibility(View.GONE);
+                    ordenarBtn.setVisibility(View.GONE);
+
+                    for(CheckBox checkBox : checkBoxes)
+                    {
+                        checkBox.setChecked(false);
+                    }
                 }
             }
         });
     }
 
+    private void showToast(StringBuilder texto, int color)
+    {
+        showToast(texto.toString(), color);
+    }
     private void showToast(String texto, int color)
     {
         LayoutInflater inflater = getLayoutInflater();

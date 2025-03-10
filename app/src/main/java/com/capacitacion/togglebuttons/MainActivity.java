@@ -1,13 +1,18 @@
 package com.capacitacion.togglebuttons;
 
+import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import android.view.Gravity;
+import android.view.LayoutInflater;
+import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -36,15 +41,40 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked)
             {
+                String texto;
+                int color;
+
                 if(isChecked)
                 {
-                    Toast.makeText(getApplicationContext(), "On Position", Toast.LENGTH_SHORT).show();
+                    texto = getString(R.string.textoToastOn);
+                    color = ContextCompat.getColor(getApplicationContext(), R.color.azulchillon);
+                    showToast(texto, color);
                 }
                 else
                 {
-                    Toast.makeText(getApplicationContext(), "Off Position", Toast.LENGTH_SHORT).show();
+                    texto = getString(R.string.textoToastOff);
+                    color = ContextCompat.getColor(getApplicationContext(), R.color.rojochillon);
+                    showToast(texto,color);
                 }
             }
         });
+    }
+
+    private void showToast(String texto, int color)
+    {
+        LayoutInflater inflater = getLayoutInflater();
+        View layout = inflater.inflate(R.layout.custom_toast, findViewById(R.id.main), false);
+        Toast toast = new Toast(getApplicationContext());
+        TextView contenido = layout.findViewById(R.id.textoToast);
+        GradientDrawable burbuja = new GradientDrawable();
+
+        burbuja.setColor(color);
+        burbuja.setCornerRadius(25);
+        layout.setBackground(burbuja);
+        contenido.setText(texto);
+        toast.setDuration(Toast.LENGTH_SHORT);
+        toast.setView(layout);
+        toast.setGravity(Gravity.BOTTOM, 0, 0);
+        toast.show();
     }
 }

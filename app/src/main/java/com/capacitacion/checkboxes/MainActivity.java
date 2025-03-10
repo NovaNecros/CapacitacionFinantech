@@ -1,4 +1,4 @@
-package com.capacitacion.togglebuttons;
+package com.capacitacion.checkboxes;
 
 import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
@@ -17,7 +17,6 @@ import android.widget.CompoundButton;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
-import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity
 {

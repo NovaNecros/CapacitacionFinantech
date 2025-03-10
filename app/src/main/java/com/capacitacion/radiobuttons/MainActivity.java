@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity
         final RadioButton azulRB = (RadioButton) findViewById(R.id.azulrb);
         final RadioButton verdeRB = (RadioButton) findViewById(R.id.verderb);
         final RadioButton moradoRB = (RadioButton) findViewById(R.id.moradorb);
-        final Button seleccion = (Button) findViewById(R.id.seleccionbtn);
+        final ToggleButton seleccion = (ToggleButton) findViewById(R.id.seleccionbtn);
 
         titulo.setVisibility(View.VISIBLE);
         imagen.setVisibility(View.GONE);
@@ -146,38 +146,51 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
-        seleccion.setOnClickListener(new View.OnClickListener()
+        seleccion.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
         {
             @Override
-            public void onClick(View view)
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked)
             {
                 String texto;
                 int color;
 
-                if(rojoRB.isChecked())
+                if(isChecked)
                 {
-                    texto = getString(R.string.texto_toast_rojo);
-                    color = ContextCompat.getColor(getApplicationContext(), R.color.rojopastel);
+                    if(rojoRB.isChecked())
+                    {
+                        texto = getString(R.string.texto_toast_rojo);
+                        color = ContextCompat.getColor(getApplicationContext(), R.color.rojopastel);
+                        showToast(texto, color);
+                    }
+                    else if(azulRB.isChecked())
+                    {
+                        texto = getString(R.string.texto_toast_azul);
+                        color = ContextCompat.getColor(getApplicationContext(), R.color.azulpastel);
+                        showToast(texto, color);
+                    }
+                    else if(verdeRB.isChecked())
+                    {
+                        texto = getString(R.string.texto_toast_verde);
+                        color = ContextCompat.getColor(getApplicationContext(), R.color.verdepastel);
+                        showToast(texto, color);
+                    }
+                    else if(moradoRB.isChecked())
+                    {
+                        texto = getString(R.string.texto_toast_morado);
+                        color = ContextCompat.getColor(getApplicationContext(), R.color.moradopastel);
+                        showToast(texto, color);
+                    }
+                }
+                else
+                {
+                    texto = getString(R.string.texto_toast_blanco);
+                    color = ContextCompat.getColor(getApplicationContext(), R.color.azulchillon);
                     showToast(texto, color);
                 }
-                else if(azulRB.isChecked())
-                {
-                    texto = getString(R.string.texto_toast_azul);
-                    color = ContextCompat.getColor(getApplicationContext(), R.color.azulpastel);
-                    showToast(texto, color);
-                }
-                else if(verdeRB.isChecked())
-                {
-                    texto = getString(R.string.texto_toast_verde);
-                    color = ContextCompat.getColor(getApplicationContext(), R.color.verdepastel);
-                    showToast(texto, color);
-                }
-                else if(moradoRB.isChecked())
-                {
-                    texto = getString(R.string.texto_toast_morado);
-                    color = ContextCompat.getColor(getApplicationContext(), R.color.moradopastel);
-                    showToast(texto, color);
-                }
+            }
+            public void onClick(View view)
+            {
+
             }
         });
     }

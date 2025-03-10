@@ -37,21 +37,40 @@
 
     <ToggleButton
         android:id="@+id/togglebutton"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:background="@drawable/toggle_button_colors"
-        android:backgroundTint="@drawable/toggle_button_colors"
+        android:layout_width="150dp"
+        android:layout_height="80dp"
+        android:background="@drawable/start_button_colors"
+        android:backgroundTint="@drawable/start_button_colors"
         android:textOff="@string/texto_boton_off"
         android:textOn="@string/texto_boton_on"
-        android:textSize="24sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.125"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.83" />
+        app:layout_constraintVertical_bias="0.85" />
+
+    <ToggleButton
+        android:id="@+id/seleccionbtn"
+        android:visibility="visible"
+        android:layout_width="150dp"
+        android:layout_height="80dp"
+        android:background="@drawable/color_botton_colors"
+        android:backgroundTint="@drawable/color_botton_colors"
+        android:textOff="@string/agregar_color"
+        android:textOn="@string/reiniciar_color"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.875"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.85" />
 
     <CheckBox
         android:id="@+id/appetizercheck"
@@ -60,7 +79,7 @@
         android:text="@string/aperitivo"
         android:textSize="40sp"
         android:textStyle="bold"
-        android:visibility="visible"
+        android:visibility="gone"
         android:gravity="start"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -76,7 +95,7 @@
         android:text="@string/entrada"
         android:textSize="40sp"
         android:textStyle="bold"
-        android:visibility="visible"
+        android:visibility="gone"
         android:gravity="start"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -91,7 +110,7 @@
         android:text="@string/postre"
         android:textSize="40sp"
         android:textStyle="bold"
-        android:visibility="visible"
+        android:visibility="gone"
         android:gravity="start"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -102,11 +121,11 @@
 
     <Button
         android:id="@+id/ordenarbtn"
-        android:layout_width="200dp"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:text="@string/ordenar"
         android:textSize="40sp"
-        android:visibility="gone"
+        android:visibility="visible"
         android:backgroundTint="@color/brat"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -115,18 +134,51 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.65" />
 
-    <Button
-        android:id="@+id/seleccionbtn"
-        android:layout_width="250dp"
+    <RadioGroup
+        android:id="@+id/barracolores"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/naranjapastel"
-        android:text="@string/seleccionar"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="150dp"
+        android:layout_marginBottom="341dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5">
+        <RadioButton
+            android:id="@+id/rojorb"
+            android:text="@string/texto_toast_rojo"
+            android:textStyle="bold"
+            android:textSize="22sp"
+            android:textColor="@color/rojosangre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <RadioButton
+            android:id="@+id/azulrb"
+            android:text="@string/texto_toast_azul"
+            android:textStyle="bold"
+            android:textSize="22sp"
+            android:textColor="@color/azul"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <RadioButton
+            android:id="@+id/verderb"
+            android:text="@string/texto_toast_verde"
+            android:textStyle="bold"
+            android:textSize="22sp"
+            android:textColor="@color/verdebosque"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <RadioButton
+            android:id="@+id/moradorb"
+            android:text="@string/texto_toast_morado"
+            android:textStyle="bold"
+            android:textSize="22sp"
+            android:textColor="@color/moradofuerte"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </RadioGroup>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

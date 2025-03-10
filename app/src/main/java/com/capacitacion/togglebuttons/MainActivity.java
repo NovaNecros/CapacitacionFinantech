@@ -17,6 +17,7 @@ import android.widget.CompoundButton;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
+import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity
 {
@@ -34,7 +35,6 @@ public class MainActivity extends AppCompatActivity
         });
 
         ToggleButton toggleButton = (ToggleButton) findViewById(R.id.togglebutton);
-        //TextView textView = (TextView) findViewById(R.id.texto);
 
         toggleButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
         {
@@ -53,8 +53,8 @@ public class MainActivity extends AppCompatActivity
                 else
                 {
                     texto = getString(R.string.textoToastOff);
-                    color = ContextCompat.getColor(getApplicationContext(), R.color.rojochillon);
-                    showToast(texto,color);
+                    color = ContextCompat.getColor(getApplicationContext(), R.color.rojosangre);
+                    showToast(texto, color);
                 }
             }
         });

@@ -1,4 +1,4 @@
-package com.capacitacion.checkboxes;
+package com.capacitacion.radiobuttons;
 
 import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
@@ -15,13 +15,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
+import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
 import android.widget.CheckBox;
 import android.widget.Button;
-
-import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity
 {
@@ -40,18 +39,22 @@ public class MainActivity extends AppCompatActivity
 
         final TextView titulo = (TextView) findViewById(R.id.titulo);
         final ToggleButton toggleButton = (ToggleButton) findViewById(R.id.togglebutton);
-        final CheckBox appetizerCheck = (CheckBox) findViewById(R.id.appetizercheck);
-        final CheckBox entreeCheck = (CheckBox) findViewById(R.id.entreecheck);
-        final CheckBox dessertCheck = (CheckBox) findViewById(R.id.dessertcheck);
         final Button ordenarBtn = (Button) findViewById(R.id.ordenarbtn);
         final ImageView imagen = (ImageView) findViewById(R.id.chef);
 
+        final CheckBox appetizerCheck = (CheckBox) findViewById(R.id.appetizercheck);
+        final CheckBox entreeCheck = (CheckBox) findViewById(R.id.entreecheck);
+        final CheckBox dessertCheck = (CheckBox) findViewById(R.id.dessertcheck);
         final CheckBox [] checkBoxes = new CheckBox[]
         {
             appetizerCheck,
             entreeCheck,
             dessertCheck
         };
+
+        final RadioButton rojoRB = (RadioButton) findViewById(R.id.rojorb);
+        final RadioButton azulRB = (RadioButton) findViewById(R.id.azulrb);
+        final RadioButton verdeRB = (RadioButton) findViewById(R.id.verderb);
 
         titulo.setVisibility(View.VISIBLE);
         imagen.setVisibility(View.VISIBLE);
@@ -144,6 +147,7 @@ public class MainActivity extends AppCompatActivity
 
     private void showToast(StringBuilder texto, int color)
     {
+
         showToast(texto.toString(), color);
     }
     private void showToast(String texto, int color)

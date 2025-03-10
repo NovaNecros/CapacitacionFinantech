@@ -1,12 +1,17 @@
 <resources>
     <string name="app_name">Checkboxes</string>
-    <string name="textoBotonOn">Salir</string>
-    <string name="textoBotonOff">Ordenar</string>
-    <string name="textoToastOn">Marca tu orden</string>
-    <string name="textoToastOff">Hasta luego!!</string>
+    <string name="texto_boton_on">Salir</string>
+    <string name="texto_boton_off">Ordenar</string>
+    <string name="texto_toast_on">Marca tu orden</string>
+    <string name="texto_toast_off">Hasta luego!!</string>
+    <string name="texto_toast_rojo">Rojo :b</string>
+    <string name="texto_toast_azul">Azul :p</string>
+    <string name="texto_toast_verde">Verde :D</string>
+    <string name="texto_toast_morado">Morado :3</string>
     <string name="titulo">Bonjour</string>
     <string name="aperitivo">Appetizer</string>
     <string name="entrada">Entree</string>
     <string name="postre">Dessert</string>
     <string name="ordenar">Finalizar Pedido</string>
+    <string name="seleccionar">Confirmar</string>
 </resources>

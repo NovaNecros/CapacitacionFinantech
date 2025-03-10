@@ -5,8 +5,12 @@
     <color name="brat">#8BCF01</color>
     <color name="azulchillon">#007FFF</color>
     <color name="rojosangre">#8A0303</color>
-    <color name="verdeBosque">#228B22</color>
+    <color name="verdebosque">#228B22</color>
     <color name="rojochillon">#FF0000</color>
+    <color name="rojopastel">#FF6961</color>
+    <color name="azulpastel">#AEC6CF</color>
+    <color name="verdepastel">#77DD77</color>
+    <color name="moradopastel">#D8BFD8</color>
     <color name="naranjapastel">#FFB347</color>
     <color name="dorado">#B8860B</color>
 </resources>

@@ -56,7 +56,17 @@ public class MainActivity extends AppCompatActivity
         final RadioButton azulRB = (RadioButton) findViewById(R.id.azulrb);
         final RadioButton verdeRB = (RadioButton) findViewById(R.id.verderb);
         final RadioButton moradoRB = (RadioButton) findViewById(R.id.moradorb);
-        final ToggleButton seleccion = (ToggleButton) findViewById(R.id.seleccionbtn);
+        final ToggleButton seleccionBtn = (ToggleButton) findViewById(R.id.seleccionbtn);
+
+        final RadioButton [] radioButtons = new RadioButton[]
+        {
+            rojoRB,
+            azulRB,
+            verdeRB,
+            moradoRB
+        };
+
+        final View mainLayout = findViewById(R.id.main);
 
         titulo.setVisibility(View.VISIBLE);
         imagen.setVisibility(View.GONE);
@@ -111,48 +121,63 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked)
             {
-                String texto;
-                int color;
+                String texto = "";
+                int color = 0;
+
 
                 if(isChecked)
                 {
-                    texto = getString(R.string.texto_boton_on);
+                    texto = getString(R.string.texto_toast_on);
                     color = ContextCompat.getColor(getApplicationContext(), R.color.azulchillon);
-                    showToast(texto, color);
 
                     imagen.setVisibility(View.GONE);
                     appetizerCheck.setVisibility(View.VISIBLE);
                     entreeCheck.setVisibility(View.VISIBLE);
                     dessertCheck.setVisibility(View.VISIBLE);
                     ordenarBtn.setVisibility(View.VISIBLE);
+                    seleccionBtn.setVisibility(View.GONE);
+
+                    for(RadioButton rb : radioButtons)
+                    {
+                        rb.setVisibility(View.GONE);
+                    }
                 }
                 else
                 {
-                    texto = getString(R.string.texto_boton_off);
+                    texto = getString(R.string.texto_toast_off);
                     color = ContextCompat.getColor(getApplicationContext(), R.color.azulchillon);
-                    showToast(texto, color);
 
-                    imagen.setVisibility(View.VISIBLE);
+                    imagen.setVisibility(View.GONE);
                     appetizerCheck.setVisibility(View.GONE);
                     entreeCheck.setVisibility(View.GONE);
                     dessertCheck.setVisibility(View.GONE);
                     ordenarBtn.setVisibility(View.GONE);
+                    seleccionBtn.setVisibility(View.VISIBLE);
+                    seleccionBtn.setChecked(false);
 
                     for(CheckBox checkBox : checkBoxes)
                     {
                         checkBox.setChecked(false);
                     }
+
+                    for(RadioButton rb : radioButtons)
+                    {
+                        rb.setVisibility(View.VISIBLE);
+                        rb.setChecked(false);
+                    }
                 }
+
+                showToast(texto, color);
             }
         });
 
-        seleccion.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
+        seleccionBtn.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
         {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked)
             {
-                String texto;
-                int color;
+                String texto = "";
+                int color = 0;
 
                 if(isChecked)
                 {
@@ -160,41 +185,48 @@ public class MainActivity extends AppCompatActivity
                     {
                         texto = getString(R.string.texto_toast_rojo);
                         color = ContextCompat.getColor(getApplicationContext(), R.color.rojopastel);
-                        showToast(texto, color);
                     }
                     else if(azulRB.isChecked())
                     {
                         texto = getString(R.string.texto_toast_azul);
                         color = ContextCompat.getColor(getApplicationContext(), R.color.azulpastel);
-                        showToast(texto, color);
                     }
                     else if(verdeRB.isChecked())
                     {
                         texto = getString(R.string.texto_toast_verde);
                         color = ContextCompat.getColor(getApplicationContext(), R.color.verdepastel);
-                        showToast(texto, color);
                     }
                     else if(moradoRB.isChecked())
                     {
                         texto = getString(R.string.texto_toast_morado);
                         color = ContextCompat.getColor(getApplicationContext(), R.color.moradopastel);
-                        showToast(texto, color);
+                    }
+
+                    mainLayout.setBackgroundColor(color);
+
+                    for(RadioButton rb : radioButtons)
+                    {
+                        rb.setVisibility(View.GONE);
+                        rb.setChecked(false);
                     }
                 }
                 else
                 {
                     texto = getString(R.string.texto_toast_blanco);
-                    color = ContextCompat.getColor(getApplicationContext(), R.color.azulchillon);
-                    showToast(texto, color);
-                }
-            }
-            public void onClick(View view)
-            {
+                    color = ContextCompat.getColor(getApplicationContext(), R.color.white);
+                    mainLayout.setBackgroundColor(color);
+                    color = ContextCompat.getColor(getApplicationContext(), R.color.black);
 
+                    for(RadioButton rb : radioButtons)
+                    {
+                        rb.setVisibility(View.VISIBLE);
+                    }
+                }
+
+                showToast(texto, color);
             }
         });
     }
-
 
     private void showToast(StringBuilder texto, int color)
     {

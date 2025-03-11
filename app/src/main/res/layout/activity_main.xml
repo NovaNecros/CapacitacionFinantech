@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
@@ -45,6 +46,7 @@
         android:textOn="@string/texto_boton_on"
         android:textSize="20sp"
         android:textStyle="bold"
+        android:textColor="@color/white"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -62,7 +64,7 @@
         android:backgroundTint="@drawable/color_botton_colors"
         android:textOff="@string/agregar_color"
         android:textOn="@string/reiniciar_color"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Checkboxes</string>
     <string name="texto_boton_on">Salir</string>
-    <string name="texto_boton_off">Comenzar</string>
+    <string name="texto_boton_off">Pide tu orden</string>
     <string name="agregar_color">Cambiar color</string>
     <string name="reiniciar_color">Quitar color</string>
     <string name="texto_toast_on">Marca tu orden</string>

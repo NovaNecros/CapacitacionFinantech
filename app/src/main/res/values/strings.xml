@@ -3,15 +3,16 @@
     <string name="texto_spinner">Spinner :b</string>
     <string name="spinner_default">Selecciona...</string>
     <string-array name="family">
-        <item>abi</item>
         <item>Mimi</item>
+        <item>Vivi</item>
+        <item>Mar</item>
+        <item>abi</item>
         <item>Kami</item>
-        <item>Jessi</item>
         <item>Aris</item>
         <item>Italia</item>
+        <item>Jessi</item>
         <item>Nancy</item>
         <item>Mari</item>
-        <item>Vivi</item>
         <item>Azul</item>
     </string-array>
 </resources>

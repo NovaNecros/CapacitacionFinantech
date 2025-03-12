@@ -9,6 +9,8 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
+import android.webkit.WebSettings;
 
 public class MainActivity extends AppCompatActivity
 {
@@ -25,9 +27,28 @@ public class MainActivity extends AppCompatActivity
             return insets;
         });
 
-        String information = "<html><body><h1>Welcome Android</h1><p>Párrafo :b</p></body></html>";
         WebView wv = (WebView) findViewById(R.id.web_view_user);
-        wv.loadData(information, "text/html", "UTF-8");
+        wv.setWebViewClient(new WebViewClient());
 
+        WebSettings webSettings = wv.getSettings();
+        webSettings.setJavaScriptEnabled(true);
+
+        /* String information = "<html><body><h1>Welcome Android</h1><p>Párrafo :b</p></body></html>";
+        wv.loadData(information, "text/html", "UTF-8"); */
+        wv.loadUrl(getResources().getString(R.string.urlGitCapacitacion));
+    }
+
+    @Override
+    public void onBackPressed()
+    {
+        WebView wv = (WebView) findViewById(R.id.web_view_user);
+        if (wv.canGoBack())
+        {
+            wv.goBack();
+        }
+        else
+        {
+            super.onBackPressed();
+        }
     }
 }

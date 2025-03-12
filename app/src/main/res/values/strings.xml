@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Web View</string>
     <string name="titulo">Web View ;p</string>
+    <string name="urlGitCapacitacion">https://github.com/NovaNecros/CapacitacionFinantech</string>
 </resources>

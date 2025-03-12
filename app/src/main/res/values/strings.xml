@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Spinners</string>
+    <string name="textoSpinner">Spinner :b</string>
+    <string-array name="family">
+        <item>abi</item>
+        <item>Mimi</item>
+        <item>Kami</item>
+        <item>Jessi</item>
+        <item>Aris</item>
+        <item>Italia</item>
+        <item>Nancy</item>
+        <item>Mari</item>
+        <item>Vivi</item>
+        <item>Azul</item>
+    </string-array>
+</resources>

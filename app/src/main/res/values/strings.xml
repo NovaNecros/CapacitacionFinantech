@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Spinners</string>
-    <string name="textoSpinner">Spinner :b</string>
+    <string name="texto_spinner">Spinner :b</string>
+    <string name="spinner_default">Selecciona...</string>
     <string-array name="family">
         <item>abi</item>
         <item>Mimi</item>

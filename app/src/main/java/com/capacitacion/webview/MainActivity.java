@@ -12,6 +12,9 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.webkit.WebSettings;
 
+import androidx.activity.OnBackPressedCallback;
+import androidx.activity.OnBackPressedDispatcher;
+
 public class MainActivity extends AppCompatActivity
 {
     @Override
@@ -36,19 +39,21 @@ public class MainActivity extends AppCompatActivity
         /* String information = "<html><body><h1>Welcome Android</h1><p>Párrafo :b</p></body></html>";
         wv.loadData(information, "text/html", "UTF-8"); */
         wv.loadUrl(getResources().getString(R.string.urlGitCapacitacion));
-    }
 
-    @Override
-    public void onBackPressed()
-    {
-        WebView wv = (WebView) findViewById(R.id.web_view_user);
-        if (wv.canGoBack())
+        getOnBackPressedDispatcher().addCallback(this, new OnBackPressedCallback(true)
         {
-            wv.goBack();
-        }
-        else
-        {
-            super.onBackPressed();
-        }
+            @Override
+            public void handleOnBackPressed()
+            {
+                if(wv.canGoBack())
+                {
+                    wv.goBack();
+                }
+                else
+                {
+                    finish();
+                }
+            }
+        });
     }
 }

@@ -10,6 +10,8 @@ import androidx.core.view.WindowInsetsCompat;
 
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
+import android.widget.ToggleButton;
 import android.widget.Toast;
 import android.media.MediaPlayer;
 
@@ -31,34 +33,28 @@ public class MainActivity extends AppCompatActivity
             return insets;
         });
 
-        final Button btnPlay = (Button) findViewById(R.id.btn_play);
-        final Button btnPause = (Button) findViewById(R.id.btn_pause);
+        final ToggleButton btnPlayPause = (ToggleButton) findViewById(R.id.btn_play_pause);
         final Button btnStop = (Button) findViewById(R.id.btn_stop);
+        btnStop.setVisibility(View.GONE);
 
-        mp = MediaPlayer.create(this, R.raw.audio);
+        mp = MediaPlayer.create(this, R.raw.twist);
 
-        btnPlay.setOnClickListener(new View.OnClickListener()
+        btnPlayPause.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
         {
             @Override
-            public void onClick(View view)
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked)
             {
-                if(!mp.isPlaying())
+                if(isChecked && !mp.isPlaying())
                 {
-                    mp.start();
-                    Toast.makeText(getApplicationContext(), "@string/btn_play", Toast.LENGTH_SHORT).show();
+                        mp.start();
+                        Toast.makeText(getApplicationContext(), getString(R.string.btn_play), Toast.LENGTH_SHORT).show();
+                        btnStop.setVisibility(View.VISIBLE);
                 }
-            }
-        });
-
-        btnPause.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View view)
-            {
-                if(mp.isPlaying())
+                else if(!isChecked && mp.isPlaying())
                 {
                     mp.pause();
-                    Toast.makeText(getApplicationContext(), "@string/btn_pause", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), getString(R.string.btn_pause), Toast.LENGTH_SHORT).show();
+                    btnStop.setVisibility(View.VISIBLE);
                 }
             }
         });
@@ -68,12 +64,11 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View view)
             {
-                if(mp.isPlaying())
-                {
-                    mp.stop();
-                    mp.prepareAsync();
-                    Toast.makeText(getApplicationContext(), "@string/btn_stop", Toast.LENGTH_SHORT).show();
-                }
+                mp.stop();
+                mp.prepareAsync();
+                btnStop.setVisibility(View.GONE);
+                btnPlayPause.setChecked(false);
+                Toast.makeText(getApplicationContext(), getString(R.string.btn_stop), Toast.LENGTH_SHORT).show();
             }
         });
     }

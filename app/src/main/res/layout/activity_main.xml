@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:text="@string/titulo"
         android:textColor="@android:color/black"
-        android:textSize="32sp"
+        android:textSize="40sp"
         android:textStyle="bold"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -22,45 +22,42 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.1" />
 
-    <Button
-        android:id="@+id/btn_play"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:text="@string/btn_play"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        android:textColor="@android:color/white"
+    <ImageView
+        android:id="@+id/gatitos"
+        android:layout_width="400dp"
+        android:layout_height="400dp"
         android:visibility="visible"
-        android:backgroundTint="@color/brat"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.05"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.85" />
-
-    <Button
-        android:id="@+id/btn_pause"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:text="@string/btn_pause"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        android:textColor="@android:color/white"
-        android:visibility="visible"
-        android:backgroundTint="@color/naranjapastel"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.85" />
+        app:layout_constraintVertical_bias="0.4"
+        app:srcCompat="@drawable/gatitos" />
 
+    <ToggleButton
+        android:id="@+id/btn_play_pause"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:background="@drawable/toggle_buttons_background"
+        android:backgroundTint="@drawable/toggle_buttons_background"
+        android:textColor="@color/white"
+        android:textOff="@string/btn_play"
+        android:textOn="@string/btn_pause"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.125"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.845" />
 
     <Button
         android:id="@+id/btn_stop"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
         android:text="@string/btn_stop"
         android:textSize="16sp"
         android:textStyle="bold"
@@ -69,7 +66,7 @@
         android:backgroundTint="@color/rojosangre"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintHorizontal_bias="0.875"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.85" />

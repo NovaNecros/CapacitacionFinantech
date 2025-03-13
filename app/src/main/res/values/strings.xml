@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Audio Player</string>
-    <string name="btn_play">Play</string>
-    <string name="btn_pause">Pause</string>
-    <string name="btn_stop">Stop</string>
-    <string name="titulo">musiquita :3</string>
+    <string name="btn_play">PLAY</string>
+    <string name="btn_pause">PAUSE</string>
+    <string name="btn_stop">STOP</string>
+    <string name="titulo">Wedding March</string>
 </resources>

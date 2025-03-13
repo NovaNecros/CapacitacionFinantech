@@ -4,16 +4,19 @@ import android.os.Bundle;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import android.widget.CompoundButton;
+import android.widget.ToggleButton;
 
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.webkit.WebSettings;
 
 import androidx.activity.OnBackPressedCallback;
-import androidx.activity.OnBackPressedDispatcher;
 
 public class MainActivity extends AppCompatActivity
 {
@@ -36,9 +39,8 @@ public class MainActivity extends AppCompatActivity
         WebSettings webSettings = wv.getSettings();
         webSettings.setJavaScriptEnabled(true);
 
-        /* String information = "<html><body><h1>Welcome Android</h1><p>Párrafo :b</p></body></html>";
-        wv.loadData(information, "text/html", "UTF-8"); */
-        wv.loadUrl(getResources().getString(R.string.urlGitCapacitacion));
+        /*String information = "<html><body><h1>Welcome Android</h1><p>Párrafo :b</p></body></html>";
+        wv.loadData(information, "text/html", "UTF-8");*/
 
         getOnBackPressedDispatcher().addCallback(this, new OnBackPressedCallback(true)
         {
@@ -52,6 +54,24 @@ public class MainActivity extends AppCompatActivity
                 else
                 {
                     finish();
+                }
+            }
+        });
+
+        ToggleButton cambiarURL = (ToggleButton) findViewById(R.id.cambiar_url);
+
+        cambiarURL.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
+        {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked)
+            {
+                if(isChecked)
+                {
+                    wv.loadUrl(getResources().getString(R.string.urlGitCapacitacion));
+                }
+                else
+                {
+                    wv.loadUrl(getResources().getString(R.string.urlGuthib));
                 }
             }
         });

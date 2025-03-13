@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">Web View</string>
     <string name="titulo">Web View ;p</string>
+    <string name="textoBotonOff">To GitHub</string>
+    <string name="textoBotonOn">To GutHib</string>
     <string name="urlGitCapacitacion">https://github.com/NovaNecros/CapacitacionFinantech</string>
+    <string name="urlGuthib">https://guthib.com/?source=techstories.org</string>
 </resources>

@@ -9,7 +9,8 @@
         android:id="@+id/texto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/texto1"
+        android:text="@string/texto_popup"
         android:textColor="@color/white"
-        android:textSize="34sp"/>
+        android:textSize="34sp"
+        android:gravity="center"/>
 </RelativeLayout>

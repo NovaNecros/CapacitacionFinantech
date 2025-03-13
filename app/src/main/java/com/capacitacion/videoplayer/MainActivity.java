@@ -39,12 +39,10 @@ public class MainActivity extends AppCompatActivity
         final ToggleButton btnPlayPause = (ToggleButton) findViewById(R.id.btn_play_pause);
 
         vv = (VideoView) findViewById(R.id.vv);
-        String videoPath = "android.resource://" + getPackageName() + "/" + R.raw.video;
+        String videoPath = "android.resource://" + getPackageName() + "/" + R.raw.horizontally_spinning_rat;
         Uri uri = Uri.parse(videoPath);
         vv.setVideoURI(uri);
         vv.setMediaController(new MediaController(this));
-        vv.requestFocus();
-        vv.start();
 
         btnPlayPause.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
         {
@@ -53,8 +51,9 @@ public class MainActivity extends AppCompatActivity
             {
                 if(isChecked && !vv.isPlaying())
                 {
-                        vv.start();
-                        Toast.makeText(getApplicationContext(), getString(R.string.btn_play), Toast.LENGTH_SHORT).show();
+                    vv.requestFocus();
+                    vv.start();
+                    Toast.makeText(getApplicationContext(), getString(R.string.btn_play), Toast.LENGTH_SHORT).show();
                 }
                 else if(!isChecked && vv.isPlaying())
                 {

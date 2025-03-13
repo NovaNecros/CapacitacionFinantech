@@ -1,4 +1,6 @@
-package com.capacitacion.audioplayer;
+package com.capacitacion.videoplayer;
+
+import java.net.URI;
 
 import android.os.Bundle;
 
@@ -9,16 +11,17 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import android.view.View;
-import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.ToggleButton;
 import android.widget.Toast;
-import android.media.MediaPlayer;
+
+import android.net.Uri;
+import android.widget.MediaController;
+import android.widget.VideoView;
 
 public class MainActivity extends AppCompatActivity
 {
-
-    private MediaPlayer mp;
+    private VideoView vv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -34,41 +37,30 @@ public class MainActivity extends AppCompatActivity
         });
 
         final ToggleButton btnPlayPause = (ToggleButton) findViewById(R.id.btn_play_pause);
-        final Button btnStop = (Button) findViewById(R.id.btn_stop);
-        btnStop.setVisibility(View.GONE);
 
-        mp = MediaPlayer.create(this, R.raw.twist);
+        vv = (VideoView) findViewById(R.id.vv);
+        String videoPath = "android.resource://" + getPackageName() + "/" + R.raw.video;
+        Uri uri = Uri.parse(videoPath);
+        vv.setVideoURI(uri);
+        vv.setMediaController(new MediaController(this));
+        vv.requestFocus();
+        vv.start();
 
         btnPlayPause.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
         {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked)
             {
-                if(isChecked && !mp.isPlaying())
+                if(isChecked && !vv.isPlaying())
                 {
-                        mp.start();
+                        vv.start();
                         Toast.makeText(getApplicationContext(), getString(R.string.btn_play), Toast.LENGTH_SHORT).show();
-                        btnStop.setVisibility(View.VISIBLE);
                 }
-                else if(!isChecked && mp.isPlaying())
+                else if(!isChecked && vv.isPlaying())
                 {
-                    mp.pause();
+                    vv.pause();
                     Toast.makeText(getApplicationContext(), getString(R.string.btn_pause), Toast.LENGTH_SHORT).show();
-                    btnStop.setVisibility(View.VISIBLE);
                 }
-            }
-        });
-
-        btnStop.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View view)
-            {
-                mp.stop();
-                mp.prepareAsync();
-                btnStop.setVisibility(View.GONE);
-                btnPlayPause.setChecked(false);
-                Toast.makeText(getApplicationContext(), getString(R.string.btn_stop), Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -77,10 +69,9 @@ public class MainActivity extends AppCompatActivity
     protected void onDestroy()
     {
         super.onDestroy();
-        if(mp != null)
+        if(vv != null)
         {
-            mp.release();
-            mp = null;
+            vv = null;
         }
     }
 }

@@ -1,4 +1,4 @@
-package com.example.capacitacion3;
+package com.capacitacion.imagen;
 
 import android.os.Bundle;
 
@@ -22,8 +22,10 @@ public class MainActivity extends AppCompatActivity
     Button botonSaludo;
     Button botonReiniciar;
     TextView textoSaludo;
-    ImageView imagen;
     EditText editNombre;
+    ImageView imagen;
+
+
 
 
     @Override
@@ -37,14 +39,14 @@ public class MainActivity extends AppCompatActivity
         botonSaludo = (Button) findViewById(R.id.botonSaludo);
         botonReiniciar = (Button) findViewById(R.id.botonReiniciar);
         textoSaludo = (TextView) findViewById(R.id.textoSaludo);
-        imagen = (ImageView) findViewById(R.id.coffeeCat);
         editNombre = (EditText) findViewById(R.id.editNombre);
+        imagen = (ImageView) findViewById(R.id.coffeeCat);
 
         miBoton.setVisibility(View.VISIBLE);
         botonSaludo.setVisibility(View.GONE);
         botonReiniciar.setVisibility(View.GONE);
-        imagen.setVisibility(View.GONE);
         editNombre.setVisibility(View.GONE);
+        imagen.setVisibility(View.GONE);
 
         miBoton.setOnClickListener(new View.OnClickListener()
         {
@@ -55,13 +57,14 @@ public class MainActivity extends AppCompatActivity
                 miBoton.setVisibility(View.GONE);
                 botonSaludo.setVisibility(View.VISIBLE);
                 botonReiniciar.setVisibility(View.VISIBLE);
-                imagen.setVisibility(View.VISIBLE);
                 editNombre.setVisibility(view.VISIBLE);
+                imagen.setVisibility(View.VISIBLE);
 
             }
         });
 
-        botonSaludo.setOnClickListener(new View.OnClickListener() {
+        botonSaludo.setOnClickListener(new View.OnClickListener()
+        {
             @Override
             public void onClick(View view)
             {

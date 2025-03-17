@@ -48,6 +48,7 @@ public class MainActivity extends AppCompatActivity
         editNombre.setVisibility(View.GONE);
         imagen.setVisibility(View.GONE);
 
+        //Este botón te lleva de la pantalla inicial a la de saludo
         miBoton.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -63,6 +64,7 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
+        //Este botón te saluda si pusiste tu nombre y se enoja si no
         botonSaludo.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -80,6 +82,7 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
+        //Este botón te regresa a la pantalla inicial y borra el contenido del EditText
         botonReiniciar.setOnClickListener(new View.OnClickListener()
         {
             @Override

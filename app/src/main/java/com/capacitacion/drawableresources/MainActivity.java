@@ -37,6 +37,7 @@ public class MainActivity extends AppCompatActivity
         botonReinicio.setVisibility(View.GONE);
         imagenGato.setVisibility(View.GONE);
 
+        //Botón que te lleva de la pantalla inicial a la pantalla final y es hexagonal :)
         botonHexagonal.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -48,6 +49,7 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
+        //Botón que te lleva de la pantalla final a la pantalla inicial
         botonReinicio.setOnClickListener(new View.OnClickListener()
         {
             @Override

@@ -1,0 +1,8 @@
+<resources>
+    <string name="hello">ola</string>
+    <string name="app_name">String Resources</string>
+    <string name="instructions">Please press back when complete.</string>
+    <string name="meme">Bottom Text</string>
+    <string name="inicio">inicio :)</string>
+    <string name="regreso">back</string>
+</resources>

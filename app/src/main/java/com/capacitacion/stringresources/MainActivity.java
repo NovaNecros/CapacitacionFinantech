@@ -46,6 +46,7 @@ public class MainActivity extends AppCompatActivity
         botonReinicio.setVisibility(View.GONE);
         imagenSaludo.setVisibility(View.VISIBLE);
 
+        //Este botón te lleva de la pantalla de inicio a la segunda pantalla
         botonInicio.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -59,6 +60,7 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
+        // Este botón te lleva de la segunda pantalla de regreso a la primera
         botonReinicio.setOnClickListener(new View.OnClickListener()
         {
             @Override

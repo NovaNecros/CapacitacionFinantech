@@ -58,6 +58,7 @@ public class MainActivity extends AppCompatActivity
         final RadioButton moradoRB = (RadioButton) findViewById(R.id.moradorb);
         final ToggleButton seleccionBtn = (ToggleButton) findViewById(R.id.seleccionbtn);
 
+        //Agrupo los radiobuttons para más fácil acceso
         final RadioButton [] radioButtons = new RadioButton[]
         {
             rojoRB,
@@ -75,6 +76,7 @@ public class MainActivity extends AppCompatActivity
         dessertCheck.setVisibility(View.GONE);
         ordenarBtn.setVisibility(View.GONE);
 
+        //Los ifs evitan poner comas al principio de la orden
         ordenarBtn.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -108,7 +110,13 @@ public class MainActivity extends AppCompatActivity
                     int color = ContextCompat.getColor(getApplicationContext(), R.color.dorado);
                     showToast(orden, color);
                 }
+                else
+                {
+                    int color = ContextCompat.getColor(getApplicationContext(), R.color.rojosangre);
+                    showToast(getString(R.string.orden_vacia), color);
+                }
 
+                //Desmarca las casillas de verificación al hacer una orden
                 for(CheckBox checkBox : checkBoxes)
                 {
                     checkBox.setChecked(false);
@@ -116,6 +124,7 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
+        //Cambia entre las pantallas de inicio y la de ordenes
         toggleButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
         {
             @Override
@@ -171,6 +180,7 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
+        //Cambia la pantalla al color seleccionado en los radiobuttons o la regresa al color inicial
         seleccionBtn.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
         {
             @Override
@@ -228,11 +238,14 @@ public class MainActivity extends AppCompatActivity
         });
     }
 
+    //Muestra un toast personalizado sin hacer cast de stringbuilder a string
     private void showToast(StringBuilder texto, int color)
     {
 
         showToast(texto.toString(), color);
     }
+
+    //Muestra un toast personalizado
     private void showToast(String texto, int color)
     {
         LayoutInflater inflater = getLayoutInflater();

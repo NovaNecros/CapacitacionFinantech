@@ -39,6 +39,7 @@ public class MainActivity extends AppCompatActivity
 
         mp = MediaPlayer.create(this, R.raw.twist);
 
+        //El botón se alterna entre pausa y play
         btnPlayPause.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
         {
             @Override
@@ -59,6 +60,7 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
+        //Detiene y reinicia el audio pero solamente aparece si había comenzado la reproducción
         btnStop.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -73,6 +75,7 @@ public class MainActivity extends AppCompatActivity
         });
     }
 
+    //Reinicia el audio si se destruye la actividad
     @Override
     protected void onDestroy()
     {

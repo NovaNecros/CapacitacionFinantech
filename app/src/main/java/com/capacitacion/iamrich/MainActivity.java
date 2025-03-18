@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity
 
         final Button popUp = (Button) findViewById(R.id.pop_up);
 
+        //Al presionarlo muestra la nueva ventana
         popUp.setOnClickListener(new View.OnClickListener()
         {
             @Override

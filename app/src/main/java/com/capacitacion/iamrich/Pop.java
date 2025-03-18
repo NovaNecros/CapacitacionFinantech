@@ -1,3 +1,5 @@
+/* Clase que controla la forma y el tamaño de la venta Pop como una actividad */
+
 package com.capacitacion.iamrich;
 
 import android.app.Activity;
@@ -18,6 +20,8 @@ public class Pop extends Activity
         int width = dm.widthPixels;
         int height = dm.heightPixels;
 
+        //aquí se ajustan las dimensiones de la ventana
         getWindow().setLayout((int)(width*0.6),(int)(height*0.3));
     }
 }
+

@@ -43,6 +43,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         });
     }
 
+    //Listeners agrupados en un solo método
     @Override
     public void onClick(View view)
     {
@@ -64,6 +65,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
+    //Este método muestra un toast personalizado dependiendo del botón que piques
     private void showToast(String texto, int color)
     {
         LayoutInflater inflater = getLayoutInflater();

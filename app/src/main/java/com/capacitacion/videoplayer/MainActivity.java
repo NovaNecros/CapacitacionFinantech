@@ -44,6 +44,7 @@ public class MainActivity extends AppCompatActivity
         vv.setVideoURI(uri);
         vv.setMediaController(new MediaController(this));
 
+        //Pausa o reproduce el video sin usar el Media Controller
         btnPlayPause.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
         {
             @Override

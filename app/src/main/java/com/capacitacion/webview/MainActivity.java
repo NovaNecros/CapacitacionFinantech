@@ -58,6 +58,7 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
+        //Este boton cambia el sitio que muestra el WebView
         ToggleButton cambiarURL = (ToggleButton) findViewById(R.id.cambiar_url);
 
         cambiarURL.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()

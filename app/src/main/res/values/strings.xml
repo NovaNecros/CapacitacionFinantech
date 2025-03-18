@@ -8,5 +8,6 @@
     <string name="aperitivo">Appetizer</string>
     <string name="entrada">Entree</string>
     <string name="postre">Dessert</string>
+    <string name="ordenVacia">>:(</string>
     <string name="ordenar">Finalizar Pedido</string>
 </resources>

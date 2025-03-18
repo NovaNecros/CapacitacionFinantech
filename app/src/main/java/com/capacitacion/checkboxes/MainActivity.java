@@ -62,6 +62,7 @@ public class MainActivity extends AppCompatActivity
 
         ordenarBtn.setOnClickListener(new View.OnClickListener()
         {
+            //Los ifs evitan comas al principio de la orden
             @Override
             public void onClick(View view)
             {
@@ -93,6 +94,11 @@ public class MainActivity extends AppCompatActivity
                     int color = ContextCompat.getColor(getApplicationContext(), R.color.dorado);
                     showToast(orden, color);
                 }
+                else
+                {
+                    int color = ContextCompat.getColor(getApplicationContext(), R.color.rojochillon);
+                    showToast(getString(R.string.ordenVacia), color);
+                }
 
                 for(CheckBox checkBox : checkBoxes)
                 {
@@ -101,6 +107,7 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
+        //Este botón alterna entre la pantalla inicial y menú
         toggleButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
         {
             @Override
@@ -142,10 +149,14 @@ public class MainActivity extends AppCompatActivity
         });
     }
 
+    //Este método llama al toast personalizado con un stringbuilder en vez de un string
+    //para no tener que hacer el cast manualmente
     private void showToast(StringBuilder texto, int color)
     {
         showToast(texto.toString(), color);
     }
+
+    //Este método muestra un toast personalizado
     private void showToast(String texto, int color)
     {
         LayoutInflater inflater = getLayoutInflater();

@@ -38,6 +38,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         family = new ArrayList<>(Arrays.asList(getResources().getStringArray(R.array.family)));
         family.add(0, getResources().getString(R.string.spinner_default));
 
+        //Se crea una instancia del adaptador personalizado para alternar
+        //los colores del dropdown
         CustomSpinnerAdapter adapter = new CustomSpinnerAdapter(this, R.layout.spinner_item, family.toArray(new String[0]));
         adapter.setDropDownViewResource(R.layout.dropdown_item);
 

@@ -1,3 +1,5 @@
+/* Clase para Spinners personalizados que alternan colores de fondo */
+
 package com.capacitacion.spinners;
 
 import android.content.Context;
@@ -37,6 +39,7 @@ public class CustomSpinnerAdapter extends ArrayAdapter<String>
         return view;
     }
 
+    //Con este métdo se alternan los colores del dropdown
     private void setColorAlterno(int position, View view)
     {
         if(view instanceof TextView)

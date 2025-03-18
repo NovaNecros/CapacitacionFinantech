@@ -13,11 +13,10 @@ import androidx.core.view.WindowInsetsCompat;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.CompoundButton;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.CompoundButton;
 import android.widget.ToggleButton;
-import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity
 {
@@ -60,6 +59,7 @@ public class MainActivity extends AppCompatActivity
         });
     }
 
+    //Metodo para mostrar Toast personalizado según el estado del ToggleButton
     private void showToast(String texto, int color)
     {
         LayoutInflater inflater = getLayoutInflater();
